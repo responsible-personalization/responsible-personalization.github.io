@@ -8,13 +8,13 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --primary:   #1e3a5f;
-      --accent:    #0d9488;
-      --accent2:   #0891b2;
-      --light-bg:  #f0fafa;
-      --border:    #d1e8e8;
-      --text:      #1a2e2e;
-      --muted:     #5a7a7a;
+      --primary:   #1a3a6b;
+      --accent:    #2563eb;
+      --accent2:   #0ea5e9;
+      --light-bg:  #f0f4fa;
+      --border:    #dde3ef;
+      --text:      #1e293b;
+      --muted:     #64748b;
       --gold:      #d97706;
       --silver:    #6b7280;
       --bronze:    #b45309;
@@ -61,7 +61,7 @@
     }
 
     nav ul a {
-      color: #9de8e0;
+      color: #c8d8f5;
       font-size: .85rem;
       padding: .35rem .65rem;
       border-radius: 4px;
@@ -77,88 +77,92 @@
 
     /* HERO */
     .hero {
-      background: linear-gradient(160deg, #0f3443 0%, #1e3a5f 45%, #0e6659 100%);
+      background: linear-gradient(120deg, #0d1f3c 0%, #14305e 60%, #1a4070 100%);
       color: #fff;
-      text-align: center;
-      padding: 5.5rem 2rem 4.5rem;
-      position: relative;
-      overflow: hidden;
+      padding: 0 2rem;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 70% 40%, rgba(13,148,136,.25) 0%, transparent 65%);
-      pointer-events: none;
+    .hero-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+      padding: 4rem 0;
+    }
+
+    @media (max-width: 720px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-deco { display: none; }
     }
 
     .hero .edition {
       display: inline-block;
-      background: rgba(13,148,136,.3);
-      border: 1px solid rgba(13,148,136,.6);
+      background: rgba(99,179,237,.25);
+      border: 1px solid rgba(99,179,237,.5);
       border-radius: 4px;
-      padding: .3rem 1rem;
+      padding: .25rem .85rem;
       font-size: .8rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
       letter-spacing: .1em;
       text-transform: uppercase;
       font-weight: 600;
     }
 
     .hero h1 {
-      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      font-size: clamp(1.5rem, 3vw, 2.3rem);
       font-weight: 800;
-      line-height: 1.25;
-      max-width: 820px;
-      margin: 0 auto 1rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
     }
 
     .hero .subtitle {
-      font-size: 1.05rem;
-      color: #9de8e0;
+      font-size: 1rem;
+      color: #90bde0;
       margin-bottom: 2rem;
-    }
-
-    .hero .meta {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 2rem;
-    }
-
-    .hero .meta-item {
-      display: flex;
-      align-items: center;
-      gap: .5rem;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(13,148,136,.4);
-      border-radius: 4px;
-      padding: .55rem 1.1rem;
-      font-size: .9rem;
+      max-width: 520px;
     }
 
     .hero .cta-row {
       display: flex;
-      gap: 1rem;
-      justify-content: center;
+      gap: .75rem;
       flex-wrap: wrap;
-      margin-top: 2.5rem;
+    }
+
+    .hero-deco {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .6rem;
+      opacity: .85;
+    }
+
+    .hero-deco-pill {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 8px;
+      padding: .55rem .8rem;
+      font-size: .75rem;
+      color: #b8d4f0;
+      white-space: nowrap;
     }
 
     .btn {
       display: inline-block;
-      padding: .65rem 1.8rem;
-      border-radius: 50px;
+      padding: .6rem 1.4rem;
+      border-radius: 5px;
       font-weight: 600;
-      font-size: .9rem;
+      font-size: .88rem;
       cursor: pointer;
       transition: transform .15s, box-shadow .15s;
     }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,.25); text-decoration: none; }
-    .btn-primary { background: var(--accent); color: #fff; }
-    .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.6); }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,.3); text-decoration: none; }
+    .btn-primary { background: #3b82f6; color: #fff; }
+    .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.5); }
 
     /* SECTIONS */
     section { padding: 4rem 2rem; }
@@ -167,22 +171,13 @@
     .container { max-width: 1000px; margin: 0 auto; }
 
     .section-title {
-      font-size: 1.55rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--primary);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: .75rem;
-    }
-    .section-title::before {
-      content: '';
-      display: inline-block;
-      width: 4px;
-      height: 1.4em;
-      background: var(--accent);
-      border-radius: 4px;
-      flex-shrink: 0;
+      margin-bottom: 1.5rem;
+      padding-left: .85rem;
+      border-left: 4px solid var(--accent);
+      display: block;
     }
 
     .section-intro {
@@ -205,7 +200,7 @@
       font-size: .82rem;
       font-weight: 600;
       color: var(--accent);
-      background: #e6faf8;
+      background: #eff6ff;
       border-radius: 4px;
       padding: .2rem .5rem;
       text-align: center;
@@ -215,20 +210,18 @@
     /* ABOUT GRID */
     .about-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.2rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
       margin-top: 1.5rem;
     }
-    @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 480px) { .about-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .about-grid { grid-template-columns: 1fr; } }
 
     .theme-card {
       background: #fff;
-      border: none;
-      border-radius: 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
       padding: 1.2rem 1.4rem;
-      box-shadow: 0 2px 12px rgba(13,148,136,.1);
-      border-top: 3px solid var(--accent);
+      border-left: 4px solid var(--accent);
     }
     .theme-card h4 { font-size: .95rem; margin-bottom: .3rem; color: var(--primary); }
     .theme-card p { font-size: .87rem; color: var(--muted); }
@@ -236,47 +229,45 @@
     /* SPEAKERS */
     .speakers-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1rem;
       margin-top: 1.5rem;
     }
     .speaker-card {
       background: #fff;
-      border: none;
-      border-radius: 16px;
-      padding: 1.8rem 1rem 1.4rem;
-      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
       transition: box-shadow .2s, transform .2s;
-      box-shadow: 0 2px 12px rgba(0,0,0,.07);
     }
-    .speaker-card:hover { box-shadow: 0 6px 24px rgba(13,148,136,.18); transform: translateY(-4px); }
+    .speaker-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.1); transform: translateY(-2px); }
     .speaker-avatar {
-      width: 96px;
-      height: 96px;
+      width: 72px;
+      height: 72px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
-      margin: 0 auto 1rem;
+      flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: #fff;
       overflow: hidden;
-      border: 3px solid var(--light-bg);
-      box-shadow: 0 0 0 2px var(--accent);
     }
-    .speaker-card h3 { font-size: .97rem; margin-bottom: .25rem; }
-    .speaker-card .affil { font-size: .8rem; color: var(--muted); margin-bottom: .5rem; }
+    .speaker-info { text-align: left; }
+    .speaker-card h3 { font-size: .95rem; margin-bottom: .15rem; font-weight: 700; }
+    .speaker-card .affil { font-size: .78rem; color: var(--muted); margin-bottom: .4rem; }
     .speaker-card .topic {
-      font-size: .77rem; color: var(--accent);
-      background: #e6faf8; border-radius: 20px;
-      padding: .15rem .6rem; display: inline-block;
+      font-size: .74rem; color: var(--accent);
+      background: #eff6ff; border-radius: 4px;
+      padding: .15rem .5rem; display: inline-block;
     }
     .badge-confirmed {
-      display: inline-block; font-size: .72rem; font-weight: 600;
-      background: #dcfce7; color: #166534;
-      border-radius: 20px; padding: .1rem .55rem; margin-top: .4rem;
+      display: none;
     }
     .badge-tentative {
       display: inline-block; font-size: .72rem; font-weight: 600;
@@ -291,8 +282,8 @@
       text-align: left; padding: .7rem 1rem;
     }
     .schedule-table td { padding: .65rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
-    .schedule-table tr:nth-child(even) td { background: #f0fafa; }
-    .schedule-table tr:hover td { background: #e6faf8; }
+    .schedule-table tr:nth-child(even) td { background: #f8faff; }
+    .schedule-table tr:hover td { background: #eff6ff; }
 
     .schedule-split {
       display: grid;
@@ -323,10 +314,9 @@
 
     .info-box {
       background: #fff;
-      border: none;
-      border-radius: 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
       padding: 1.3rem 1.5rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,.07);
     }
     .info-box h4 { font-size: 1rem; color: var(--primary); margin-bottom: .7rem; font-weight: 700; }
     .info-box ul { list-style: none; }
@@ -339,8 +329,8 @@
     .info-box ul li::before { content: "\25B8"; color: var(--accent); flex-shrink: 0; }
 
     .highlight-banner {
-      background: linear-gradient(90deg, #e6faf8, #f0fdfa);
-      border: 1px solid #99e6df; border-radius: 8px;
+      background: linear-gradient(90deg, #eff6ff, #e0f2fe);
+      border: 1px solid #bfdbfe; border-radius: 8px;
       padding: 1rem 1.4rem; margin-bottom: 1.5rem;
       font-size: .92rem; display: flex; align-items: center; gap: .7rem;
     }
@@ -358,9 +348,8 @@
       gap: 1rem;
     }
     .person-card {
-      background: #fff; border: none;
-      border-radius: 14px; padding: 1rem; text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,.07);
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 10px; padding: 1rem; text-align: center;
     }
     .person-avatar {
       width: 58px; height: 58px; border-radius: 50%;
@@ -417,7 +406,7 @@
       background: var(--primary); color: #a8c4f0;
       text-align: center; padding: 2rem; font-size: .85rem;
     }
-    footer a { color: #9de8e0; }
+    footer a { color: #c8d8f5; }
     footer .footer-links {
       display: flex; gap: 1.5rem;
       justify-content: center; margin-top: .5rem; flex-wrap: wrap;
@@ -445,15 +434,25 @@
 
 <!-- HERO -->
 <header class="hero">
-  <div class="edition">NeurIPS 2026 Workshop</div>
-  <h1>RePLAI4U: Responsible Personalizing the Lifecycle of AI for Users</h1>
-  <p class="subtitle">Personalized AI is here. Are we ready? Bridging ML, HCI, ethics, and law to chart a responsible path for user-adaptive AI.</p>
-  <div class="meta">
-  </div>
-  <div class="cta-row">
-    <a class="btn btn-primary" href="#cfp">Submit Paper</a>
-    <a class="btn btn-outline" href="#speakers">Invited Speakers</a>
-    <a class="btn btn-outline" href="#schedule">View Schedule</a>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="edition">NeurIPS 2026 Workshop</div>
+      <h1>RePLAI4U: Responsible Personalizing the Lifecycle of AI for Users</h1>
+      <p class="subtitle">Personalized AI is here. Are we ready? Bridging ML, HCI, ethics, and law to chart a responsible path for user-adaptive AI.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#cfp">Submit Paper</a>
+        <a class="btn btn-outline" href="#speakers">Invited Speakers</a>
+        <a class="btn btn-outline" href="#schedule">View Schedule</a>
+      </div>
+    </div>
+    <div class="hero-deco">
+      <div class="hero-deco-pill">Responsible Personalization</div>
+      <div class="hero-deco-pill">Data Curation</div>
+      <div class="hero-deco-pill">Privacy &amp; Consent</div>
+      <div class="hero-deco-pill">Evaluation</div>
+      <div class="hero-deco-pill">Societal Impacts</div>
+      <div class="hero-deco-pill">HCI &amp; Ethics</div>
+    </div>
   </div>
 </header>
 
@@ -498,49 +497,61 @@
 <section id="speakers">
   <div class="container">
     <h2 class="section-title">Invited Speakers</h2>
-    <p class="section-intro">Representing leading institutions across academia and industry worldwide.</p>
+    <p class="section-intro">Representing leading institutions across academia and industry worldwide. All confirmed.</p>
     <div class="speakers-grid">
 
       <div class="speaker-card">
         <div class="speaker-avatar"><img src="images/mohan_kankanhalli.jpg" alt="Mohan Kankanhalli"/></div>
-        <h3>Mohan Kankanhalli</h3>
-        <p class="affil">National University of Singapore</p>
-        <span class="topic">Multimedia &amp; Trustworthy AI</span><br/>
+        <div class="speaker-info">
+          <h3>Mohan Kankanhalli</h3>
+          <p class="affil">National University of Singapore</p>
+          <span class="topic">Multimedia &amp; Trustworthy AI</span>
+        </div>
       </div>
 
       <div class="speaker-card">
         <div class="speaker-avatar"><img src="images/angie_zhang.webp" alt="Angie Zhang"/></div>
-        <h3>Angie Zhang</h3>
-        <p class="affil">University of Sydney</p>
-        <span class="topic">Human-Centered AI &amp; Fairness</span><br/>
+        <div class="speaker-info">
+          <h3>Angie Zhang</h3>
+          <p class="affil">University of Sydney</p>
+          <span class="topic">Human-Centered AI &amp; Fairness</span>
+        </div>
       </div>
 
       <div class="speaker-card">
         <div class="speaker-avatar"><img src="images/angelina_wang.jpg" alt="Angelina Wang"/></div>
-        <h3>Angelina Wang</h3>
-        <p class="affil">Cornell Tech</p>
-        <span class="topic">Responsible AI &amp; Algorithmic Fairness</span><br/>
+        <div class="speaker-info">
+          <h3>Angelina Wang</h3>
+          <p class="affil">Cornell Tech</p>
+          <span class="topic">Responsible AI &amp; Algorithmic Fairness</span>
+        </div>
       </div>
 
       <div class="speaker-card">
         <div class="speaker-avatar"><img src="images/emma_pierson.jpg" alt="Emma Pierson"/></div>
-        <h3>Emma Pierson</h3>
-        <p class="affil">UC Berkeley</p>
-        <span class="topic">ML, Data Science &amp; Fairness</span><br/>
+        <div class="speaker-info">
+          <h3>Emma Pierson</h3>
+          <p class="affil">UC Berkeley</p>
+          <span class="topic">ML, Data Science &amp; Fairness</span>
+        </div>
       </div>
 
       <div class="speaker-card">
         <div class="speaker-avatar"><img src="images/paul_liang.jpg" alt="Paul Liang"/></div>
-        <h3>Paul Liang</h3>
-        <p class="affil">MIT</p>
-        <span class="topic">Multisensory AI &amp; Human-AI Interaction</span><br/>
+        <div class="speaker-info">
+          <h3>Paul Liang</h3>
+          <p class="affil">MIT</p>
+          <span class="topic">Multisensory AI &amp; Human-AI Interaction</span>
+        </div>
       </div>
 
       <div class="speaker-card">
         <div class="speaker-avatar"><img src="images/leshem_choshen.jpg" alt="Leshem Choshen"/></div>
-        <h3>Leshem Choshen</h3>
-        <p class="affil">MIT&ndash;IBM AI Research</p>
-        <span class="topic">LLM Evaluation &amp; Adaptation</span><br/>
+        <div class="speaker-info">
+          <h3>Leshem Choshen</h3>
+          <p class="affil">MIT&ndash;IBM AI Research</p>
+          <span class="topic">LLM Evaluation &amp; Adaptation</span>
+        </div>
       </div>
 
     </div>
@@ -800,7 +811,7 @@
     <a href="#">OpenReview</a>
     <a href="#">Contact Organizers</a>
   </div>
-  <p style="margin-top:.75rem;font-size:.78rem;color:#5aada6;">&copy; 2026 RePLAI4U Workshop Organizers</p>
+  <p style="margin-top:.75rem;font-size:.78rem;color:#6b8fcc;">&copy; 2026 RePLAI4U Workshop Organizers</p>
 </footer>
 
 </body>
