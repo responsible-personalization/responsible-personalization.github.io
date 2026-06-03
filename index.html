@@ -238,6 +238,7 @@
       font-size: 1.4rem;
       font-weight: 700;
       color: #fff;
+      overflow: hidden;
     }
     .speaker-card h3 { font-size: .97rem; margin-bottom: .25rem; }
     .speaker-card .affil { font-size: .8rem; color: var(--muted); margin-bottom: .5rem; }
@@ -339,6 +340,13 @@
       margin: 0 auto .7rem;
       display: flex; align-items: center; justify-content: center;
       font-weight: 700; font-size: 1rem; color: #fff;
+      overflow: hidden;
+    }
+    .person-avatar img {
+      width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
+    }
+    .speaker-avatar img {
+      width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
     }
     .person-card h4 { font-size: .85rem; font-weight: 600; margin-bottom: .2rem; }
     .person-card p { font-size: .75rem; color: var(--muted); }
@@ -665,42 +673,42 @@
     <h3>Workshop Organizers</h3>
     <div class="people-grid">
       <div class="person-card">
-        <div class="person-avatar">DY</div>
+        <div class="person-avatar"><img src="images/diyi_yang.jpg" alt="Diyi Yang"/></div>
         <h4>Diyi Yang</h4>
         <p>Stanford University</p>
       </div>
       <div class="person-card">
-        <div class="person-avatar">OP</div>
+        <div class="person-avatar"><img src="images/orestis.webp" alt="Orestis Papakyriakopoulos"/></div>
         <h4>Orestis Papakyriakopoulos</h4>
         <p>TU Munich</p>
       </div>
       <div class="person-card">
-        <div class="person-avatar">HS</div>
+        <div class="person-avatar"><img src="images/hua_shen.png" alt="Hua Shen"/></div>
         <h4>Hua Shen</h4>
         <p>NYU Shanghai / NYU</p>
       </div>
       <div class="person-card">
-        <div class="person-avatar">DZ</div>
+        <div class="person-avatar"><img src="images/dora_zhao.jpg" alt="Dora Zhao"/></div>
         <h4>Dora Zhao</h4>
         <p>Stanford University</p>
       </div>
       <div class="person-card">
-        <div class="person-avatar">YD</div>
+        <div class="person-avatar"><img src="images/yijiang_dong.png" alt="Yijiang River Dong"/></div>
         <h4>Yijiang River Dong</h4>
         <p>University of Cambridge</p>
       </div>
       <div class="person-card">
-        <div class="person-avatar">MR</div>
+        <div class="person-avatar"><img src="images/michael_ryan.jpg" alt="Michael J. Ryan"/></div>
         <h4>Michael J. Ryan</h4>
         <p>Stanford University</p>
       </div>
       <div class="person-card">
-        <div class="person-avatar">JB</div>
+        <div class="person-avatar"><img src="images/jan_batzner.jpg" alt="Jan Batzner"/></div>
         <h4>Jan Batzner</h4>
         <p>TU Munich / Weizenbaum</p>
       </div>
       <div class="person-card">
-        <div class="person-avatar">CY</div>
+        <div class="person-avatar"><img src="images/cheng_yu.jpg" alt="Cheng Yu"/></div>
         <h4>Cheng Yu</h4>
         <p>TU Munich</p>
       </div>
@@ -709,7 +717,7 @@
     <h3>Student Contributors</h3>
     <div class="people-grid">
       <div class="person-card">
-        <div class="person-avatar" style="background:linear-gradient(135deg,#0ea5e9,#6366f1);">OS</div>
+        <div class="person-avatar" style="background:linear-gradient(135deg,#0ea5e9,#6366f1);"><img src="images/omar_shaikh.jpg" alt="Omar Shaikh"/></div>
         <h4>Omar Shaikh</h4>
         <p>Stanford University</p>
       </div>
